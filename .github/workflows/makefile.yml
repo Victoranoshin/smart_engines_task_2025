@@ -1,0 +1,35 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: configure
+      run: ./configure
+    - name: install lib
+      run: git clone "https://github.com/nlohmann/json.git";
+           cd json;
+           mkdir build;
+           cd build;
+           cmake ..;
+           make -j4;
+
+    - name: Install dependencies
+      run: make
+
+
+    - name: Run test
+      run: make test
+
+    - name: Run distcheck
+      run: make distcheck
