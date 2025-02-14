@@ -30,7 +30,7 @@ jobs:
            make -j4;
            sudo make install;
 
-    - name: make programm
+    - name: make program
       run: make
 
     - name: Run test
