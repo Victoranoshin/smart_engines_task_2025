@@ -14,8 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: configure
-      run: ./configure
+    # - name: configure
+    #   run: ./configure
     - name: install lib
       run: git clone "https://github.com/nlohmann/json.git";
            cd json;
