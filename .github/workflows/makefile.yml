@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build-and-test:
 
     runs-on: ubuntu-latest
 
@@ -31,8 +31,7 @@ jobs:
            sudo make install;
 
     - name: make programm
-      run: ls;
-           make;
+      run: make
 
     - name: Run test
       run: make test
