@@ -25,7 +25,8 @@ jobs:
            make -j4;
 
     - name: Install dependencies
-      run: make
+      run: ls;
+           make;
 
 
     - name: Run test
