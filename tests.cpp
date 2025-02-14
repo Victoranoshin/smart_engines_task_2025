@@ -170,8 +170,6 @@ TEST_F(HeapSortTest, HandlesErrors) {
     ASSERT_THROW(get_data_from_json("not json format str"), json::exception);
     ASSERT_THROW(get_data_from_json(R"({"a": "b"})"), json::exception);
     ASSERT_THROW(get_data_from_json("exmple.json"), std::invalid_argument);
-
-
 }
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
